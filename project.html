@@ -1,0 +1,448 @@
+<html>
+<header style="font-size:80"><marquee> MK TRAVELS</marquee></header>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p.a {
+  line-length: normal;
+}
+
+p.b {
+  line-length: 1.6;
+}
+p.a {
+  white-space: nowrap;
+}
+
+p.b {
+  white-space: normal;
+}
+.city {
+  background-color:green;
+  color: white;
+  padding: 10px;
+} 
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+header{color:red;font-size:50}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0;font-size:20}
+.mySlides {display: none}
+img {vertical-align: middle;}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+    border:1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#h1 {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+} 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: grey;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+</head>
+<body style="background-color:lavender">
+<nav>
+<a href="/html/">TOUR</a> |
+<a href="/css/">SPOTS</a> |
+<a href="/js/">EXPERIENCE</a> |
+<a href="/python/">SAFETY</a>
+</nav>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="C:\Users\student.SOC-ITLAB3-33\Desktop">
+  <div class="text">MK TRAVELS</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="C:\Users\trc\Desktop\mk1.jpg" style="width:70%">
+  <div class="text">MK TRAVELS</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="C:\Users\trc\Desktop\mk2.jpg" style="width:70%">
+  <div class="text">MK TRAVELS</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+  s dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<h1 style="color:grey" ><br>
+There are many well known travel agencies that provide bus services in the country. Every day, hundreds of buses run across different cities carrying passengers to their preferred destinations. M K Travels bus provides comfortable journeys and makes sure that passengers reach their destinations on the stipulated time. Currently, M K Travels bus service is operating in more than 5 Indian cities. You can book a M K Travels bus easily on MakeMyTrip. The online booking process is very simple and hardly takes much time.</b></h1>
+<a href="https://www.makemytrip.com/">click this link to know more </a>
+<img src="https://savetoursandtravels.com/wp-content/uploads/2016/07/car.png">
+<h2 style="font-size:40">TOP ROUTES FOR MK TRAVEL:</h2>
+
+<table>
+  <tr>
+    <th>ROUTES</th>
+    <th>POPULOR BUS TYPES</th>
+    <th>PRICE</th>
+  </tr>
+  <tr>
+    <td>Ankleshwar to Dhule bus</td>
+    <td>Non AC Sleeper</td>
+    <td>₹600</td>
+  </tr>
+  <tr>
+    <td>Malegaon (Dhule) to Ahmedabad bus</td>
+    <td>Non AC Sleeper</td>
+    <td>₹760</td>
+  </tr>
+  <tr>
+    <td>Dhule to Ahmedabad bus</td>
+    <td>Non AC Sleeper</td>
+    <td>₹710</td>
+  </tr>
+  <tr>
+    <td>Baroda to Shirdi bus</td>
+    <td>AC Sleeper, Non AC Sleeper, AC Seater/Sleeper, Non AC Seater</td>
+    <td>₹397</td>
+  </tr>
+  <tr>
+    <td>Anand to Surat bus</td>
+    <td>AC Sleeper, Non AC Sleeper, AC Seater/Sleeper, Non AC Seater/Sleeper</td>
+    <td>₹320</td>
+  </tr>
+  <tr>
+    <td>Vadodara to Surat bus</td>
+    <td>Non AC Sleeper, AC Sleeper, Non AC Seater/Sleeper, AC Seater/Sleeper</td>
+    <td>₹257</td>
+  </tr>
+</table>
+<h1 id="myHeader"> MK routes bus services</h1>
+<p>M K Travels presently has a number of buses operating in the country. It is currently offering its services in various Indian states. M K Travels also provide night buses. By booking your bus tickets, you can get the services of M K Travels. Below, you can find the different kinds of buses offered by the M K Travels:
+<ul>
+  <li>Non AC Seater/Sleeper (2+1)</li>
+  <li>Non AC Seater (2+2)</li>
+  <li>Non AC Sleeper (2+1)</li>
+  <li>Non AC Airbus (2+2)</li>
+  <li>Volvo Multi-Axle I-Shift Volvo Multi-Axle AC Semi Sleeper (2+2)</li>
+  <li>Volvo Multi-Axle I-Shift AC Sleeper (2+1)</li>
+  <li>Semi Sleeper (2+2)</li>
+</ul>  
+Some of the amenities that you will get on the buses of the service providers M K Travels are reading lights, luggage compartment, charging points and water bottles. However, keeping in mind the pandemic situation, you might not get blankets and pillows while travelling by buses.</p>
+<h1 style="color:blue">Other bus Operators:</h1>
+<ol type="1">
+  <li style="color:green" >Tanuj Travels</li>
+  <li style="color:green" >Shiv Shakti</li>
+  <li style="color:green" >SHIVAM TRAVELS (Via Nagar)</li>
+  <li style="color:green" >Rao Travel Heights</li>
+  <li style="color:green" >Shefali Travels</li>
+  <li style="color:green" >Mahendra Rajhans Travels</li>
+  <li style="color:green" >Nehra Travels</li>
+  <li style="color:green" >Anita Maya Travels</li>
+  <li style="color:green" >Aadithya Travels</li>
+  <li style="color:green" >Shree Swaminarayan Travels (Manish AST)</li>
+  <li style="color:green" >MSK Travels</li>
+  <li style="color:green" >Naveen Travels</li>
+  <li style="color:green" >Geetas Bus Nawaz Travels</li>
+</ol>
+<h1 id="MyHeader"><b>M K Travels Online bus ticket booking with MakeMyTrip</b><h1> 
+<center><a href="https://static.toiimg.com/photo/62570109/.jpg">CLICK HERE</a><br>
+<a href="https://www.redbus.in/"></center></a>
+<h1 id="myHeader">Tourist spots</h1>
+<br><br>
+<h3 class="city">London</h3>
+<h4>London is the capital and largest city of England and the United Kingdom. It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia.The City of London, its ancient core and financial centre, was founded by the Romans as Londinium and retains boundaries close to its medieval ones.Since the 19th century,"London" has also referred to the metropolis around this core, historically split between the counties of Middlesex, Essex, Surrey, Kent, and Hertfordshire, which largely comprises Greater London,governed by the Greater London Authority. The City of Westminster, to the west of the City of London, has for centuries held the national government and parliament..</h4>
+
+<h3 class="city">Paris</h3>
+<p>Paris (French pronunciation: ​[paʁi] (audio speaker iconlisten)) is the capital and most populous city of France, with an estimated population of 2,165,423 residents as of 1 January 2019 in an area of more than 105 square kilometres (41 square miles).Since the 17th century, Paris has been one of Europe's major centres of finance, diplomacy, commerce, fashion, gastronomy, science, and arts. The City of Paris is the centre and seat of government of the region and province of Île-de-France, or Paris Region, which has an estimated population of 12,174,880, or about 18 percent of the population of France as of 2017. The Paris Region had a GDP of €709 billion ($808 billion) in 2017. According to the Economist Intelligence Unit Worldwide Cost of Living Survey in 2018, Paris was the second most expensive city in the world, after Singapore and ahead of Zürich, Hong Kong, Oslo, and Geneva.Another source ranked Paris as most expensive, on par with Singapore and Hong Kong, in 2018</p>
+
+<h3 class="city">Tokyo</h3>
+<p>Tokyo (/ˈtoʊkioʊ/;[7] Japanese: 東京, Tōkyō [toːkʲoː] (audio speaker iconlisten)), historically known in the West as Tokio and officially the Tokyo Metropolis (東京都, Tōkyō-to), is the capital, the largest city, and the most populous metropolitan area in the Greater Tokyo Area, the Kantō region, and Japan, as well as the most populous metropolitan area in the world and most populous prefecture of Japan. Located at the head of Tokyo Bay, the prefecture forms part of the Kantō region on the central Pacific coast of Japan's main island of Honshu. Tokyo is the political and economic center of the country, as well as the seat of the Emperor of Japan and the national government. As of 2021, the prefecture has an estimated population of 14.04 million. The Greater Tokyo Area is the most populous metropolitan area in the world, with an estimated 37.468 million residents in 2018</p>
+
+<p>ANOTHER WEBSITE</p>
+
+
+<center><form action="/action_page.php">
+  <label for="cars">Choose a tourist:</label>
+  <select id="places" name="place">
+    <option value="volvo">AUSTRALIA</option>
+    <option value="saab">AMERICA</option>
+    <option value="fiat">INDIA</option>
+    <option value="audi">JAPAN</option>
+	<option value="volvo">PARIS</option>
+    <option value="saab">LONDON</option>
+    <option value="fiat">EGYPT</option>
+    <option value="audi">GERMANY</option>
+  </select><br><br>
+ <input type="submit"></center>
+ <article>
+ <p class="a">M.R. Travels act as an integrator of travel industry in India by providing one-stop/end-to-end solutions for your every travel & comfort need. It is one of the pioneer players along Indore route who have served more than million passengers since inception.
+</p></article>
+<details>
+ <p class="b">M R Travels act as an integrator of travel industry in India by providing one-stop/end-to-end solutions for your every travel & comfort need. It is one of the pioneer players along Indore route who have served more than million passengers since inception. Regulated and sophisticated services.</p></details>
+<h1> NUMBER OF SEATS MK TRAVELS HAVE:</h1>
+<div class="grid-container">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>  
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>  
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  <div class="grid-item">11</div>
+  <div class="grid-item">12</div>
+  <div class="grid-item">13</div>  
+  <div class="grid-item">14</div>
+  <div class="grid-item">15</div>
+  <div class="grid-item">16</div>  
+  <div class="grid-item">17</div>
+  <div class="grid-item">18</div>
+  <div class="grid-item">19</div>
+  <div class="grid-item">20</div>
+  <div class="grid-item">21</div>
+</div>
+<section>
+ <center><script>
+document.write("Hello everyone!);
+</script></center>
+</section>
+<center> <p id="demo";style="font-size:50"></p>
+<script >
+document.getElementById("demo").innerHTML = " Safe journey";
+</script></center>
+<center><p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+let text1 = "Mk";
+let text2 = "Travels";
+let text3 = text1 + " " + text2;
+let length= text3.length;
+document.getElementById("demo2").innerHTML = length;
+
+</script>
+<input id="age" value="18" />
+
+<button onclick="myFunction()">R u eligible?</button>
+<object data="t2.jpg" width="400" height="300"></object>
+
+<p id="demo4"></p>
+
+<script>
+function myFunction() {
+  let age = document.getElementById("age").value;
+  let voteable = (age < 18) ? "Too young":"Old enough";
+  document.getElementById("demo4").innerHTML = voteable + " to vote.";
+}
+</script>
+<p id="demo5"></p>
+<script>
+
+const person = {
+  firstName: "MK TRAVELS",
+  lastName: "AWESOME",
+  id: 5566,
+  fullName : function() {
+    return this.firstName + "JOURNEY " + this.lastName;
+  }
+};
+
+
+document.getElementById("demo5").innerHTML = person.fullName()/;
+</script>
+<p id="demo6"></p>
+
+<script>
+function myFunction(a, b) {
+  return a * b;
+}
+let x = myFunction(4, 3);
+document.getElementById("demo6").innerHTML = x;
+</script>
+<details>
+  <summary>Mk Travels in NewDelhi</summary>
+  <p>M K Tours & Travels in New Delhi, Delhi is a top player in the category Placement Services (Candidate) in the Delhi. This well-known establishment acts as a one-stop destination servicing customers both local and from other parts of Delhi. Over the course of its journey, this business has established a firm foothold in it’s industry. The belief that customer satisfaction is as important as their products and services, have helped this establishment garner a vast base of customers, which continues to grow by the day. This business employs individuals that are dedicated towards their respective roles and put in a lot of effort to achieve the common vision and larger goals of the company. In the near future, this business aims to expand its line of products and services and cater to a larger client base. In Delhi, this establishment occupies a prominent location in New Delhi. It is an effortless task in commuting to this establishment as there are various modes of transport readily available. It is at Maharani Road, Kilokari, which makes it easy for first-time visitors in locating this establishment. It is known to provide top service in the following categories: Placement Services (Candidate), Placement Services (For Employers), Overseas Placement Services (Candidate)..</p>
+</details>
+
+
+<script>
+let x, y, z;  
+x = 5;        
+y = 6;        
+z = x + y;    
+
+document.getElementById("demo1").innerHTML =
+"The value of z is " + z + ".";  
+</script></center>
+<div>
+ <form  method="post" action="formregister.php">
+ Username : <input type="text" name="Username">
+ Email id : <input type="text" name="Email">
+ Password : <input type="password" name="Password">
+ Confirm Password : <input type="password" name="Confirm_Password">
+ <input type="submit">
+ </form>
+    </div>
+
+<center><p>register</p>
+
+<button onclick="myFunction()">exit</button>
+
+<script>
+function myFunction() {
+  alert("Do you want to exit?!");
+}
+</script></center>
+
+<footer>
+  <p>Author: Hege Refsnes<br>
+  <a href="swethab.it21@bitsathy.ac.in">swethab.it21@bitsathy.ac.in</a></p>
+</footer>
+
+  
+</body>
+ </html>   
